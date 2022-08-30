@@ -16,7 +16,7 @@ let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
 
 //storing the list to local storage and not resetting it on refresh
 if (!localStorage.getItem('moviesList')) {
-    $window.localStorage.setItem('initData', JSON.stringify(moviesList));
+    localStorage.setItem('initData', JSON.stringify(moviesList));
 }
 // localStorage.setItem("moviesList", JSON.stringify(moviesList))
 
