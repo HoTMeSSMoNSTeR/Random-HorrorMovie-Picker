@@ -10,7 +10,8 @@ let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
     "House on Haunted Hill", "The Haunting", "Texas Chainsaw Massacre", "Candyman 1992",
     "Candyman 2021", "Secret Window", "Night of the Living Dead", "Return of the Living Dead",
     "Evil Dead", "Evil Dead 2", "Army of Darkness", "The Purge", "Child's Play",
-    "Woman in Black", "The Others", "Poltergeist", "Death Becomes Her"]
+    "Woman in Black", "The Others", "Poltergeist", "Death Becomes Her", "13 Ghosts", "Beetlejuice",
+    "Tucker and Dale vs Evil"]
 
 
 
