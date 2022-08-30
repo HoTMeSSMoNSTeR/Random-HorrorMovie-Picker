@@ -1,0 +1,91 @@
+@font-face {
+    src: url("shlop\ rg.ttf");
+    font-family: "shlop";
+
+}
+
+body {
+    background-image: url("skull.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-family: "shlop";
+    font-size: 300%;
+    color: #790704;
+    text-align: center;
+    text-shadow: 0 0 2px black;
+
+}
+
+#movie-selected {
+    font-family: "shlop";
+    color: #790704;
+    font-size: 300%;
+    margin-left: 15%;
+    text-shadow: 0 0 1px black;
+}
+
+.input-directions {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    text-shadow: 0 0 5px black;
+    font-size: x-large;
+    padding: 3px 6px;
+    margin: 3px 6px;
+}
+
+#main-question {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    color: white;
+    font-size: x-large;
+    text-shadow: 0 0 5px black;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: 2px solid #790704;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 0 1px white;
+}
+
+button {
+    background-color: #790704;
+    color: white;
+    font-size: large;
+    border: none;
+    font-family: 'Amatic SC', cursive;
+    padding: 5px 30px;
+    border-radius: 5px;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+
+button:hover {
+    box-shadow: 0 0 10px black;
+    background-color: black;
+    color: black;
+    text-shadow: 0 0 100px white;
+}
+
+#add-button {
+    margin-left: 10%;
+}
+
+#select-button {
+    margin-bottom: 15px;
+}
+
+#ul-movies {
+    list-style: none;
+    text-shadow: 0 0 3px white;
+    font-family: 'Amatic SC', cursive;
+    font-size: x-large;
+    font-weight: 700;
+}

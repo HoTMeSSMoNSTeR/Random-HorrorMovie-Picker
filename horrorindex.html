@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Scary Movie Night Randomizer</h1>
+    <form action="">
+        <label for="add-movie" class="input-directions">Add movies to your picklist</label>
+        <input type="text" id="add-movie"> <br>
+        <button id="add-button">Add</button>
+    </form>
+    <h3 id="main-question">What movie should you watch tonight?</h3>
+    <p id="movie-selected"></p>
+    <button id="select-button">Pick My Movie</button>
+    <div>
+        <button id="show-list">Show List</button>
+        <button id="hide-list">Hide List</button>
+    </div>
+    <div id="list-div">
+        <ul id="ul-movies"></ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

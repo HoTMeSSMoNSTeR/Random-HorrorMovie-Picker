@@ -1,0 +1,58 @@
+let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
+    "Halloween", "Halloween 2", "Halloween 2018", "Halloween Kills",
+    "Halloween Ends", "Insidious", "Insidious 2", "Insidious 3",
+    "Insidious The Last Key", "The Conjuring", "The Conjuring 2",
+    "The Conjuring 3", "Malignant", "The Black Phone", "Ready or Not",
+    "Get Out", "Orphan", "A Quiet Place", "It", "It Chapter 2", "The Shining",
+    "Doctor Sleep", "Psycho", "American Psycho", "Alien", "A Nightmare on Elm St",
+    "Friday the 13th", "Misery", "The Cabin in the Woods", "Annabelle", "Annabelle Creation",
+    "Annabelle Comes Home", "Sinister", "Fear Street", "The Ring", "The Grudge",
+    "House on Haunted Hill", "The Haunting", "Texas Chainsaw Massacre", "Candyman 1992",
+    "Candyman 2021", "Secret Window", "Night of the Living Dead", "Return of the Living Dead",
+    "Evil Dead", "Evil Dead 2", "Army of Darkness", "The Purge", "Child's Play",
+    "Woman in Black", "The Others", "Poltergeist", "Death Becomes Her"]
+
+
+
+let movieSelected = document.getElementById("movie-selected")
+const selectBtn = document.getElementById("select-button")
+const addBtn = document.getElementById("add-button")
+const addMovie = document.getElementById("add-movie")
+const showList = document.getElementById("show-list")
+const hideList = document.getElementById("hide-list")
+const ulMovies = document.getElementById("ul-movies")
+const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
+
+
+
+addBtn.addEventListener("click", function () {
+    moviesList.push(addMovie.value)
+    addMovie.value = ""
+    localStorage.setItem("moviesList", JSON.stringify(moviesList))
+})
+
+selectBtn.addEventListener("click", function () {
+    function getRandomMovie() {
+        let randomMovie = Math.floor(Math.random() * storedMovies.length)
+        return storedMovies[randomMovie]
+    }
+    movieSelected.innerHTML = getRandomMovie()
+})
+
+showList.addEventListener("click", function () {
+    let listItem = ""
+    for (let i = 0; i < storedMovies.length; i++) {
+        listItem += `<li>${storedMovies[i]}</li>`
+
+    }
+    ulMovies.innerHTML = listItem
+})
+
+hideList.addEventListener("click", function () {
+    ulMovies.innerHTML = ""
+})
+
+
+
+
+
