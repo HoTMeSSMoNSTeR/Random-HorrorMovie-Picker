@@ -12,7 +12,13 @@ let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
     "Evil Dead", "Evil Dead 2", "Army of Darkness", "The Purge", "Child's Play",
     "Woman in Black", "The Others", "Poltergeist", "Death Becomes Her", "13 Ghosts", "Beetlejuice",
     "Tucker and Dale vs Evil"]
+//hard coded movie list, but user has the option to add to this list
 
+//storing the list to local storage and not resetting it on refresh
+if (!localStorage.getItem('moviesList')) {
+    $window.localStorage.setItem('initData', JSON.stringify(moviesList));
+}
+// localStorage.setItem("moviesList", JSON.stringify(moviesList))
 
 
 let movieSelected = document.getElementById("movie-selected")
@@ -22,17 +28,17 @@ const addMovie = document.getElementById("add-movie")
 const showList = document.getElementById("show-list")
 const hideList = document.getElementById("hide-list")
 const ulMovies = document.getElementById("ul-movies")
-const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
-
 
 
 addBtn.addEventListener("click", function () {
+    event.preventDefault()
     moviesList.push(addMovie.value)
     addMovie.value = ""
     localStorage.setItem("moviesList", JSON.stringify(moviesList))
 })
 
 selectBtn.addEventListener("click", function () {
+    const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
     function getRandomMovie() {
         let randomMovie = Math.floor(Math.random() * storedMovies.length)
         return storedMovies[randomMovie]
@@ -42,6 +48,7 @@ selectBtn.addEventListener("click", function () {
 
 showList.addEventListener("click", function () {
     let listItem = ""
+    const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
     for (let i = 0; i < storedMovies.length; i++) {
         listItem += `<li>${storedMovies[i]}</li>`
 
