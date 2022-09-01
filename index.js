@@ -30,7 +30,7 @@ const hideList = document.getElementById("hide-list")
 const ulMovies = document.getElementById("ul-movies")
 
 
-addBtn.addEventListener("click", function () {
+addBtn.addEventListener("click", function (event) {
     event.preventDefault()
     moviesList.push(addMovie.value)
     addMovie.value = ""
