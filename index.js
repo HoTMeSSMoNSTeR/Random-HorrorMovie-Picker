@@ -35,7 +35,7 @@ const indecisionInput = document.getElementById("indecision-input")
 const chooseBtn = document.getElementById("choose-or-die-btn")
 const indecisionChoice = document.getElementById("indecision-choice")
 const resetBtn = document.getElementById("reset-button")
-const soundEffect2 = document.getElementBtId("sound-effect2")
+const soundEffect2 = document.getElementById("sound-effect2")
 let listTwo = []
 
 
