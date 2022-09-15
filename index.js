@@ -15,6 +15,7 @@ let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
 //hard coded movie list, but user has the option to add to this list
 
 //storing the list to local storage and not resetting it on refresh
+localStorage.setItem('moviesList', JSON.stringify(moviesList))
 if (!localStorage.getItem('moviesList')) {
     localStorage.setItem('initData', JSON.stringify(moviesList));
 }
