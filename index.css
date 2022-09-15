@@ -14,19 +14,78 @@ body {
 
 h1 {
     font-family: "shlop";
-    font-size: 300%;
+    font-size: 350%;
+    letter-spacing: 2px;
     color: #790704;
     text-align: center;
     text-shadow: 0 0 2px black;
+    margin-bottom: 10px;
 
 }
 
-#movie-selected {
-    font-family: "shlop";
-    color: #790704;
-    font-size: 300%;
+#flexbox {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.second-box {
+    margin-top: 7%;
     margin-left: 15%;
+}
+
+.first-section {
+    margin-top: 40px;
+    margin-left: 10%;
+}
+
+.tiny {
+    font-size: 15px;
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    text-shadow: 0 0 5px black;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* .movie-selected,
+.indecision-choice {
+    font-family: "shlop";
+    letter-spacing: 1px;
+    color: #790704;
+    font-size: 400%;
+    margin-left: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
     text-shadow: 0 0 1px black;
+} */
+
+.indecision-choice,
+.movie-selected {
+    font-family: "shlop";
+    letter-spacing: 1px;
+    font-size: 400%;
+    color: #790704;
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 1px black;
+}
+
+.pre-indecision {
+    display: none;
+}
+
+.post-indecision {
+    animation: 7s fadeIn -0.1s;
+}
+
+.movie-selected {
+    animation: fadeOutIn 3s 10s;
 }
 
 .input-directions {
@@ -36,6 +95,7 @@ h1 {
     font-size: x-large;
     padding: 3px 6px;
     margin: 3px 6px;
+
 }
 
 #main-question {
@@ -66,6 +126,7 @@ button {
     border-radius: 5px;
     transition-duration: 1s;
     transition-timing-function: ease-out;
+    margin-right: 10px;
 }
 
 
@@ -84,10 +145,68 @@ button:hover {
     margin-bottom: 15px;
 }
 
-#ul-movies {
+.ul-movies,
+.indecision-list {
     list-style: none;
     text-shadow: 0 0 3px white;
     font-family: 'Amatic SC', cursive;
     font-size: x-large;
     font-weight: 700;
+}
+
+.indecision-list {
+    color: white;
+}
+
+/* .invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+} */
+
+@keyframes fadeOutIn {
+
+    0% {
+        opacity: 0
+    }
+
+    13% {
+        opacity: 1
+    }
+
+    25% {
+        opacity: 0
+    }
+
+    35% {
+        opacity: 0.5
+    }
+
+    50% {
+        opacity: 0
+    }
+
+    60% {
+        opacity: 1
+    }
+
+    75% {
+        opacity: 0.5
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

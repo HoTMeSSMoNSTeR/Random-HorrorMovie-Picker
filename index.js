@@ -28,30 +28,40 @@ const addMovie = document.getElementById("add-movie")
 const showList = document.getElementById("show-list")
 const hideList = document.getElementById("hide-list")
 const ulMovies = document.getElementById("ul-movies")
+const soundEffect = document.getElementById("sound-effect")
+const indecisionList = document.getElementById("indecision-list")
+const indecisionBtn = document.getElementById("indecision-button")
+const indecisionInput = document.getElementById("indecision-input")
+const chooseBtn = document.getElementById("choose-or-die-btn")
+const indecisionChoice = document.getElementById("indecision-choice")
+const resetBtn = document.getElementById("reset-button")
+const soundEffect2 = document.getElementBtId("sound-effect2")
+let listTwo = []
 
 
-addBtn.addEventListener("click", function (event) {
+
+addBtn.addEventListener('click', function (event) {
     event.preventDefault()
     moviesList.push(addMovie.value)
     addMovie.value = ""
-    localStorage.setItem("moviesList", JSON.stringify(moviesList))
+    localStorage.setItem('moviesList', JSON.stringify(moviesList))
 })
 
-selectBtn.addEventListener("click", function () {
-    const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
+selectBtn.addEventListener('click', function () {
+    const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
     function getRandomMovie() {
         let randomMovie = Math.floor(Math.random() * storedMovies.length)
         return storedMovies[randomMovie]
     }
     movieSelected.innerHTML = getRandomMovie()
+    soundEffect.play()
 })
 
-showList.addEventListener("click", function () {
-    let listItem = ""
-    const storedMovies = JSON.parse(localStorage.getItem("moviesList"))
+showList.addEventListener('click', function () {
+    let listItem = ''
+    const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
     for (let i = 0; i < storedMovies.length; i++) {
         listItem += `<li>${storedMovies[i]}</li>`
-
     }
     ulMovies.innerHTML = listItem
 })
@@ -60,7 +70,28 @@ hideList.addEventListener("click", function () {
     ulMovies.innerHTML = ""
 })
 
+indecisionBtn.addEventListener('click', function () {
+    listTwo.push(indecisionInput.value)
+    indecisionList.innerHTML = `<li>${listTwo}</li>`
+    indecisionInput.value = ""
+})
 
+chooseBtn.addEventListener('click', function () {
+    function chooseRandomMovie() {
+        let random = Math.floor(Math.random() * listTwo.length)
+        return listTwo[random]
+    }
+    indecisionChoice.innerHTML = chooseRandomMovie()
+    indecisionChoice.classList.remove("pre-indecision")
+    indecisionChoice.classList.add("post-indecision")
+    soundEffect2.play()
+    indecisionList.innerHTML = ""
+})
 
-
+resetBtn.addEventListener('click', function () {
+    listTwo = []
+    indecisionChoice.innerHTML = ""
+    indecisionBtn.classList.remove("post-indecision")
+    indecisionBtn.classList.add("pre-indecision")
+})
 
