@@ -135,7 +135,9 @@ button:hover {
     background-color: black;
     color: black;
     text-shadow: 0 0 100px white;
+    cursor: url('icons8-ghost-32.png'), auto;
 }
+
 
 #add-button {
     margin-left: 10%;

@@ -58,13 +58,21 @@ selectBtn.addEventListener('click', function () {
     soundEffect.play()
 })
 
+// showList.addEventListener('click', function () {
+//     let listItem = ''
+//     const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
+//     for (let i = 0; i < storedMovies.length; i++) {
+//         listItem += `<li>${storedMovies[i]}</li>`
+//     }
+//     ulMovies.innerHTML = listItem
+// })
+
 showList.addEventListener('click', function () {
-    let listItem = ''
     const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
-    for (let i = 0; i < storedMovies.length; i++) {
-        listItem += `<li>${storedMovies[i]}</li>`
-    }
-    ulMovies.innerHTML = listItem
+    const renderMovieList = storedMovies.map(function (title) {
+        return `<li>${title}</li>`
+    })
+    ulMovies.innerHTML = renderMovieList.join('')
 })
 
 hideList.addEventListener("click", function () {
@@ -73,7 +81,7 @@ hideList.addEventListener("click", function () {
 
 indecisionBtn.addEventListener('click', function () {
     listTwo.push(indecisionInput.value)
-    indecisionList.innerHTML = `<li>${listTwo}</li>`
+    indecisionList.innerHTML = `<li>${listTwo.join(' ☠️ ')}</li>`
     indecisionInput.value = ""
 })
 
