@@ -8,7 +8,7 @@ body {
     background-image: url("skull.jpg");
     background-size: cover;
     background-position: center;
-    cursor: url('icons8-ghost-32.png'), auto;
+    cursor: url('icons8-ghost-32.png') 25 15, auto;
 }
 
 
@@ -81,7 +81,7 @@ h1 {
 }
 
 .post-indecision {
-    animation: 7s fadeIn -0.1s;
+    animation: 8s fadeIn -0.1s;
 }
 
 .movie-selected {
@@ -135,7 +135,7 @@ button:hover {
     background-color: black;
     color: black;
     text-shadow: 0 0 100px white;
-    cursor: url('icons8-ghost-32.png'), auto;
+    cursor: url('icons8-ghost-32.png') 25 15, auto;
 }
 
 
