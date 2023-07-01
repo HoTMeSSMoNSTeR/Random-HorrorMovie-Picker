@@ -119,8 +119,7 @@ input[type="text"] {
 button {
     background-color: #790704;
     color: white;
-    font-size: medium;
-    text-shadow: -1px 1px 5px black;
+    font-size: large;
     border: none;
     font-family: 'Amatic SC', cursive;
     padding: 5px 30px;
@@ -128,7 +127,6 @@ button {
     transition-duration: 1s;
     transition-timing-function: ease-out;
     margin-right: 10px;
-    margin-top: 10px;
 }
 
 
@@ -141,8 +139,7 @@ button:hover {
 }
 
 
-#add-button,
-#del-button {
+#add-button {
     margin-left: 10%;
 }
 
