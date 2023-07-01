@@ -15,17 +15,19 @@ let moviesList = ["Scream", "Scream 2", "Scream 3", "Scream 4", "Scream 5",
 //hard coded movie list, but user has the option to add to this list
 
 //storing the list to local storage and not resetting it on refresh
-localStorage.setItem('moviesList', JSON.stringify(moviesList))
-if (!localStorage.getItem('moviesList')) {
+if (!localStorage.getItem('movies')) {
     localStorage.setItem('initData', JSON.stringify(moviesList));
 }
 // localStorage.setItem("moviesList", JSON.stringify(moviesList))
 
 
+// grabbing all my elements that I will need to use by their id's
 let movieSelected = document.getElementById("movie-selected")
 const selectBtn = document.getElementById("select-button")
 const addBtn = document.getElementById("add-button")
 const addMovie = document.getElementById("add-movie")
+const delBtn = document.getElementById("del-button")
+const delMovie = document.getElementById("del-movie")
 const showList = document.getElementById("show-list")
 const hideList = document.getElementById("hide-list")
 const ulMovies = document.getElementById("ul-movies")
@@ -37,19 +39,32 @@ const chooseBtn = document.getElementById("choose-or-die-btn")
 const indecisionChoice = document.getElementById("indecision-choice")
 const resetBtn = document.getElementById("reset-button")
 const soundEffect2 = document.getElementById("sound-effect2")
+
+
 let listTwo = []
 
 
-
+// button that lets user add movie to the hard coded list and updates the local storage
 addBtn.addEventListener('click', function (event) {
     event.preventDefault()
     moviesList.push(addMovie.value)
     addMovie.value = ""
-    localStorage.setItem('moviesList', JSON.stringify(moviesList))
+    localStorage.setItem('movies', JSON.stringify(moviesList))
 })
 
+// button that allows user to delete movie from the hard coded list and updates local storage
+delBtn.addEventListener('click', function (event) {
+    event.preventDefault()
+    let index = moviesList.indexOf(delMovie.value)
+    console.log(index)
+    moviesList.splice(index, 1)
+    delMovie.value = ""
+    localStorage.setItem('movies', JSON.stringify(moviesList))
+})
+
+// button that picks and displays chosen movie title randomly from the lost
 selectBtn.addEventListener('click', function () {
-    const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
+    const storedMovies = JSON.parse(localStorage.getItem('movies'))
     function getRandomMovie() {
         let randomMovie = Math.floor(Math.random() * storedMovies.length)
         return storedMovies[randomMovie]
@@ -58,17 +73,9 @@ selectBtn.addEventListener('click', function () {
     soundEffect.play()
 })
 
-// showList.addEventListener('click', function () {
-//     let listItem = ''
-//     const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
-//     for (let i = 0; i < storedMovies.length; i++) {
-//         listItem += `<li>${storedMovies[i]}</li>`
-//     }
-//     ulMovies.innerHTML = listItem
-// })
 
 showList.addEventListener('click', function () {
-    const storedMovies = JSON.parse(localStorage.getItem('moviesList'))
+    const storedMovies = JSON.parse(localStorage.getItem('movies'))
     const renderMovieList = storedMovies.map(function (title) {
         return `<li>${title}</li>`
     })
@@ -101,6 +108,6 @@ resetBtn.addEventListener('click', function () {
     listTwo = []
     indecisionChoice.innerHTML = ""
     indecisionBtn.classList.remove("post-indecision")
-    indecisionBtn.classList.add("pre-indecision")
+    // indecisionBtn.classList.add("pre-indecision")
 })
 
